@@ -15,7 +15,7 @@ petal_width = st.number_input("Petal Width")
 
 if st.button("Predict"):
     features = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
-    features_scaled = standard_scaler.transform(features)
+    features_scaled = scaler.transform(features)
     prediction = model.predict(features_scaled)
     species = ['Setosa', 'Versicolor', 'Virginica']
     st.success(f"Predicted Species: {species[np.argmax(prediction)]}")
